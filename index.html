@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>Twittler</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
     <script src="javascript/jquery.js"></script>
     <script src="javascript/data_generator.js"></script>
   </head>
   <body>
+    <header class='primary-header container group'>
+      <h1 class='logo'>
+        <a href='index.html'>Twittler</a>
+      </h1>
+      <h3 class='tagline'>The Hack Reactor Way to Get Your Tweets!</h3>
+    </header>
+    <section class="row">
+      <div class="grid">
+        <section class="col-2-3">
+        </section>
+        <section class="col-1-3">
+        </section>
+      </div>
+    </section>
+    <footer class="primary-footer container">
+      <small>© Hack Reactor</small>
+    </footer>
+
+
     <script>
 
       $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+        var $tweetSection = $('section.col-2-3');
+        $tweetSection.html('');
 
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
+          $tweet.appendTo($tweetSection);
           index -= 1;
         }
 
