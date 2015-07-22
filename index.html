@@ -16,10 +16,22 @@
     </header>
     <section class="row">
       <div class="grid">
-        <section class="col-2-3">
-        </section>
-        <section class="col-1-3">
-        </section>
+        <section class="tweets col-2-3">
+        </section><!--
+        --><form class="col-1-3" action="#" method="post">
+          <fieldset class="tweet-group">
+            <legend><h1>Tweet a Message</h1></br></legend>
+            <label>
+              Handle
+              <input type="text" name="handle" placeholder="Please enter handle" required>
+            </label>
+            <label>
+              Tweet
+              <textarea name="tweet" placeholder="Type your tweet!"></textarea>
+            </label>
+          </fieldset>
+          <input class="btn btn-default" type="submit" name="submit" value="Submit">
+        </form>
       </div>
     </section>
     <footer class="primary-footer container">
@@ -30,14 +42,14 @@
     <script>
 
       $(document).ready(function(){
-        var $tweetSection = $('section.col-2-3');
-        $tweetSection.html('');
+        var $tweetSection = $('section.tweets');
+        $tweetSection.html('<h1>Tweets</h1></br><button class="btn btn-default" name="load">Pull New Tweets</button></br></br>');
 
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          var $tweet = $('<div class="tweet"></div>');
+          $tweet.html('<a href="">@' + tweet.user + '</a>: ' + tweet.message + "</br><span>" + tweet.created_at + "</span>");
           $tweet.appendTo($tweetSection);
           index -= 1;
         }
