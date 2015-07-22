@@ -54,19 +54,42 @@
           var $tweetDiv = $('div.tweets');
           $tweetDiv.html('');
           var index = streams.home.length - 1;
-          while(index >= 0){
+          while(index >= 0) {
             var tweet = streams.home[index];
             var $tweet = $('<div class="tweet"></div>');
-            $tweet.html('<a href="">@' + tweet.user + '</a>: ' + tweet.message + "</br><span>" + tweet.created_at + "</span>");
+            $tweet.html('<h4 class="user-link">' + tweet.user + '</h4>"' 
+              + tweet.message.trim() + '"</br><span class="created-time"">' 
+              + tweet.created_at + '</span>');
             $tweet.appendTo($tweetDiv);
             index -= 1;
           }
         };
 
-        pullTweets();
+        var selectUser = function(user) {
+          event.preventDefault();
+          console.log("got here");
+          var $tweetDiv = $('div.tweets');
+          $tweetDiv.html('<h2>@' + user + '</h2></br>');
+          var index = streams.users[user].length - 1;
+          while(index >= 0) {
+            var tweet = streams.users[user][index];
+            var $tweet = $('<div class="tweet"></div>');
+            $tweet.html('<h4 class="user-link">' + tweet.user + '</h4>"' 
+              + tweet.message.trim() + '"</br><span class="created-time"">' 
+              + tweet.created_at + '</span>');
+            $tweet.appendTo($tweetDiv);
+            index -= 1;
+          }
+        };
 
         $("button").on("click", pullTweets);
-        
+        $(document).on("click", "h4.user-link", function() {
+          selectUser($(this).text());
+        });
+
+        pullTweets();
+
+        // Somehow need to define the streams.users."your handle" whenever you create a new one
       });
 
     </script>
