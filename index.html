@@ -66,9 +66,8 @@
         };
 
         var selectUser = function(user) {
-          event.preventDefault();
-          console.log("got here");
           var $tweetDiv = $('div.tweets');
+          $tweetDiv.html('');
           $tweetDiv.html('<h2>@' + user + '</h2></br>');
           var index = streams.users[user].length - 1;
           while(index >= 0) {
