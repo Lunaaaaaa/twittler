@@ -338,9 +338,25 @@ textarea {
   margin-top: -2px;
 }
 
-.tweet span {
+.tweet h4 {
+	cursor: pointer;
+}
+
+.tweet h4.user-link:hover {
+  color: #a9b2b9;
+}
+
+.tweet h4.user-link:before{
+	content: "@";
+}
+
+.tweet h4.user-link:after{
+	content: ":";
+}
+
+.tweet span.created-time {
   font-size: 12px;
-  padding-left: 35px;
+  padding-left: 25px;
 }
 
 /*
