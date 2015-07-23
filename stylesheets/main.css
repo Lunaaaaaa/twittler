@@ -122,7 +122,7 @@ table {
 */
 
 .logo {
-  border-top: 4px solid #648880;
+  border-top: 4px solid #FF4131;
   float: left;
   font-size: 48px;
   font-weight: 100;
@@ -174,7 +174,7 @@ table {
 */
 
 a {
-  color: #648880;
+  color: #FF4131;
   text-decoration: none;
 }
 
@@ -193,7 +193,7 @@ p a {
 
 .primary-header a:hover,
 .primary-footer a:hover {
-  color: #648880;
+  color: #FF4131;
 }
 
 /*
@@ -227,7 +227,7 @@ p a {
 */
 
 .primary-footer {
-  color: #648880;
+  color: #FF4131;
   font-size: 14px;
   padding-top: 44px;
   padding-bottom: 44px;
@@ -262,18 +262,18 @@ p a {
 
 .btn-alt:hover {
   background: #fff;
-  color: #648880;
+  color: #FF4131;
 }
 
 .btn-default {
   border: 0;
-  background: #648880;
+  background: #FF4131;
   padding: 11px 30px;
   font-size: 14px;
 }
 
 .btn-default:hover {
-  background: #77a198;
+  background: #FF584B;
 }
 
 /*
@@ -293,7 +293,7 @@ textarea {
 }
 
 .tweet-group label {
-  color: #648880;
+  color: #FF4131;
   cursor: pointer;
   font-weight: 400;
 }
@@ -366,13 +366,13 @@ textarea {
 */
 
 body {
-  background-color: #293f50;
+  background-color: #B21D11;
   color: #888;
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4 {
-  color: #648880;
+  color: #FF4131;
 }
 
 h1 {
